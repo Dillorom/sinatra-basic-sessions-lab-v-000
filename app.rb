@@ -15,7 +15,7 @@ class App < Sinatra::Base
     item = Item.new(params[:item])
 
     @sessions = item
-    
+
     erb:checkout
   end
 
