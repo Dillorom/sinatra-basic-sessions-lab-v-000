@@ -2,7 +2,7 @@ require_relative 'config/environment'
 require 'pry'
 class App < Sinatra::Base
   configure do
-    enable :sessions
+    enable :Sessions
     set :session_secret, "secret"
   end
 
@@ -11,12 +11,8 @@ class App < Sinatra::Base
   end
 
   post '/checkout' do
-    #binding.pry
-    item = Item.new(params[:item])
-    params[:item]
-    session[:item] = params[:item]
     @sessions = session
-
+    session[:item] = params[:item]
     erb:checkout
   end
 
